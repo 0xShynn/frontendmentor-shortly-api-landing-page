@@ -1,8 +1,8 @@
 const text = {
   // style object for base or default style
   baseStyle: {
-    fontWeight: '600',
     color: 'secondary.midgray',
+    fontWeight: '500',
   },
   // styles for different sizes ("sm", "md", "lg")
   sizes: {},

@@ -1,4 +1,4 @@
-import { sharedBaseStyle, light, dark } from './sharedStyleLinkButton'
+import { sharedBaseStyle, primary } from './sharedStyleLinkButton'
 
 const button = {
   baseStyle: {
@@ -6,16 +6,20 @@ const button = {
   },
   sizes: {
     sm: {},
-    md: {},
-    lg: {},
+    md: { py: '22px', px: '30px' },
+    lg: {
+      py: '32px',
+      px: '40px',
+      fontSize: '20px',
+      borderRadius: 'xl',
+    },
   },
   variants: {
-    ...light,
-    ...dark,
+    ...primary,
     // Add here the shared variants from the sharedStyleLinkButton.js
   },
   defaultProps: {
-    // size: 'md',
+    size: 'md',
     // variant: 'light',
   },
 }

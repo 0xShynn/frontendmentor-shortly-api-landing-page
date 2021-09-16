@@ -2,20 +2,17 @@ export const sharedBaseStyle = {
   // Write here some shared `base style` between Link and Button components
 }
 
-export const light = {
-  light: {
-    _hover: {},
-    _disabled: {
-      _hover: {},
-    },
-  },
+const SharedBtnStyle = {
+  fontWeight: '700',
 }
 
-export const dark = {
-  dark: {
-    _hover: {},
-    _disabled: {
-      _hover: {},
+export const primary = {
+  primary: {
+    bg: 'primary.teal',
+    color: 'white',
+    ...SharedBtnStyle,
+    _hover: {
+      bg: 'primary.teal_hover',
     },
   },
 }
