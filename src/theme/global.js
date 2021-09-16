@@ -3,6 +3,7 @@ const global = {
   body: {
     fontSize: '16px',
     fontFamily: 'body',
+    fontWeight: '600',
     bg: 'white',
   },
 }

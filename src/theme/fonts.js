@@ -1,7 +1,7 @@
 const fonts = {
   // add fonts from https://fontsource.org
-  heading: 'sans-serif',
-  body: 'sans-serif',
+  heading: 'Poppins',
+  body: 'Poppins',
 }
 
 export default fonts

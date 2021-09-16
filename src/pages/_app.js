@@ -1,4 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react'
+import '@fontsource/poppins/600.css'
+import '@fontsource/poppins/700.css'
 import { DefaultSeo } from 'next-seo'
 
 import SEO from '../../next-seo.config'
