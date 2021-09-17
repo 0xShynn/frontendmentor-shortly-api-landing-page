@@ -1,7 +1,8 @@
-import { Box, Flex } from '@chakra-ui/layout'
+import { Box } from '@chakra-ui/layout'
 import { NextSeo } from 'next-seo'
 
 import Header from '../components/Header'
+import Hero from '../components/Hero'
 
 export default function Home() {
   return (
@@ -9,17 +10,10 @@ export default function Home() {
       {/* Edit the Head info */}
       <NextSeo title="Home" description="Description" />
 
-      <Flex
-        role="main"
-        bg="white"
-        direction="column"
-        align="center"
-        justify="center"
-        py="12"
-        px="6"
-      >
+      <Box role="main" bg="white">
         <Header />
-      </Flex>
+        <Hero />
+      </Box>
 
       <Box role="contentinfo"></Box>
     </Box>

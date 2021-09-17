@@ -15,8 +15,14 @@ const Header = () => {
   ]
 
   return (
-    <Box maxW="1110px" w="full">
-      <Flex justify="space-between" align="center" w="full">
+    <Box maxW="1110px" w="full" mx="auto">
+      <Flex
+        justify="space-between"
+        align="center"
+        w="full"
+        py="12"
+        px={{ base: 6, xl: 0 }}
+      >
         <Flex align="center">
           <Link href="/" size="none" mr="10">
             <Box w="120px">

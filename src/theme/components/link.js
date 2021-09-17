@@ -28,7 +28,7 @@ const link = {
     // Add here the shared variants from the sharedStyleLinkButton.js
   },
   defaultProps: {
-    size: 'md',
+    // size: 'md',
     // variant: 'light',
   },
 }
