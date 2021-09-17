@@ -24,6 +24,7 @@ const link = {
   },
   variants: {
     ...primary,
+    unstyled: {},
     // Add here the shared variants from the sharedStyleLinkButton.js
   },
   defaultProps: {
