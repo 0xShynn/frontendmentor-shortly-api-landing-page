@@ -3,13 +3,13 @@ import { sharedBaseStyle, primary } from './sharedStyleLinkButton'
 const link = {
   baseStyle: {
     ...sharedBaseStyle,
-    borderRadius: 'full',
     fontWeight: '700',
     _hover: {
       textDecoration: 'none',
     },
   },
   sizes: {
+    none: {},
     sm: {
       py: '8px',
       px: '28px',

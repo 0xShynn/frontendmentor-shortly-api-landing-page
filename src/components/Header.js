@@ -1,7 +1,7 @@
 import { IconButton } from '@chakra-ui/button'
 import { useDisclosure } from '@chakra-ui/hooks'
 import { CloseIcon } from '@chakra-ui/icons'
-import { Box, Divider, Flex, Link, VStack } from '@chakra-ui/layout'
+import { Box, Divider, Flex, HStack, Link, VStack } from '@chakra-ui/layout'
 
 import ShortlyLogo from '../assets/brand/ShortlyLogo'
 import IconCLose from '../assets/icons/IconClose'
@@ -15,18 +15,36 @@ const Header = () => {
   ]
 
   return (
-    <Box w="full">
-      <Flex justify="space-between" align="center" w="full" pos="relative">
-        <Box w="120px">
-          <ShortlyLogo />
-        </Box>
+    <Box maxW="1110px" w="full">
+      <Flex justify="space-between" align="center" w="full">
+        <Flex align="center">
+          <Link href="/" size="none" mr="10">
+            <Box w="120px">
+              <ShortlyLogo />
+            </Box>
+          </Link>
+
+          <HStack spacing="8" display={{ base: 'none', lg: 'block' }}>
+            {navLinks.map((link, index) => (
+              <Link
+                key={index}
+                href={link.url}
+                color="secondary.midgray"
+                size="none"
+              >
+                {link.title}
+              </Link>
+            ))}
+          </HStack>
+        </Flex>
 
         <Box display={{ base: 'none', lg: 'block' }}>
-          {navLinks.map((link, index) => (
-            <Link key={index} href={link.url}>
-              {link.title}
-            </Link>
-          ))}
+          <Link href="#" size="none" color="secondary.midgray" mr="10">
+            Login
+          </Link>
+          <Link href="#" variant="primary" size="sm">
+            Sign Up
+          </Link>
         </Box>
 
         <Box display={{ base: 'block', lg: 'none' }}>
