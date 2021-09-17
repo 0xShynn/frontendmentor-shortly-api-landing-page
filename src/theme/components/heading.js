@@ -10,13 +10,13 @@ const heading = {
   variants: {
     h1: {
       // you can also use responsive styles
-      fontSize: '80px',
-      letterSpacing: '-2px',
-      lineHeight: '90px',
+      fontSize: ['42px', , '42px', , '80px'],
+      letterSpacing: { base: '-1.05px', lg: '-2px' },
+      lineHeight: { base: '48px', lg: '90px' },
     },
     h2: {
-      fontSize: '40px',
-      letterSpacing: '-1px',
+      fontSize: ['28px', , '28px', , '40px'],
+      letterSpacing: { base: '-0.7px', lg: '-1px' },
       lineHeight: '48px',
     },
     h3: {

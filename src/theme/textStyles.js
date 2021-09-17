@@ -1,14 +1,14 @@
 const textStyles = {
   // Add some text styles for the Text component
   big: {
-    fontSize: '22px',
-    lineHeight: '36px',
-    letterSpacing: '0.15px',
+    fontSize: { base: '18px', lg: '22px' },
+    lineHeight: { base: '30px', lg: '36px' },
+    letterSpacing: { base: '0.12px', lg: '0.15px' },
   },
   medium: {
-    fontSize: '18px',
-    lineHeight: '32px',
-    letterSpacing: '0.12px',
+    fontSize: { base: '16px', lg: '18px' },
+    lineHeight: { base: '28px', lg: '32px' },
+    letterSpacing: { base: '0.11px', lg: '0.12px' },
   },
 }
 

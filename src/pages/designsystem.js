@@ -28,7 +28,7 @@ const DesignSystem = () => {
           content.
         </Text>
         <HStack>
-          <Text>Button</Text>
+          <Text>Link</Text>
           <Link variant="primary" size="md" href="/">
             Get Started
           </Link>
@@ -37,6 +37,7 @@ const DesignSystem = () => {
           </Link>
         </HStack>
         <HStack>
+          <Text>Button</Text>
           <Button variant="primary" size="lg">
             Shorten It!
           </Button>
