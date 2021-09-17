@@ -74,6 +74,11 @@ const Header = () => {
         <Flex
           justify={{ base: null, md: 'flex-end' }}
           display={{ base: 'flex', lg: 'none' }}
+          pos="absolute"
+          zIndex="dropdown"
+          w="full"
+          pt="90px"
+          top="0"
         >
           <Box
             bg="primary.darkpurple"
@@ -82,6 +87,7 @@ const Header = () => {
             mt="6"
             py="10"
             w={{ base: 'full', md: '375px' }}
+            mx="6"
           >
             <VStack>
               {navLinks.map((link, index) => (
@@ -91,6 +97,7 @@ const Header = () => {
                   color="white"
                   fontSize="18px"
                   onClick={onToggle}
+                  size="md"
                 >
                   {link.title}
                 </Link>
@@ -98,7 +105,13 @@ const Header = () => {
             </VStack>
             <Divider borderColor="white" opacity="0.2" my="4" />
             <VStack>
-              <Link href="#" color="white" fontSize="18px" onClick={onToggle}>
+              <Link
+                href="#"
+                color="white"
+                fontSize="18px"
+                onClick={onToggle}
+                size="md"
+              >
                 Login
               </Link>
               <Link
@@ -108,6 +121,7 @@ const Header = () => {
                 textAlign="center"
                 fontSize="18px"
                 onClick={onToggle}
+                size="md"
               >
                 Sign Up
               </Link>
