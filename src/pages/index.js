@@ -3,6 +3,7 @@ import { NextSeo } from 'next-seo'
 
 import Header from '../components/Header'
 import Hero from '../components/Hero'
+import Services from '../components/Services'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Box role="main" bg="white">
         <Header />
         <Hero />
+        <Services />
       </Box>
 
       <Box role="contentinfo"></Box>

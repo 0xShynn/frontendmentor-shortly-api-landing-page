@@ -4,7 +4,7 @@ import { CloseIcon } from '@chakra-ui/icons'
 import { Box, Divider, Flex, HStack, Link, VStack } from '@chakra-ui/layout'
 
 import ShortlyLogo from '../assets/brand/ShortlyLogo'
-import IconCLose from '../assets/icons/IconClose'
+import IconClose from '../assets/icons/IconClose'
 
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure()
@@ -62,7 +62,7 @@ const Header = () => {
               isOpen ? (
                 <CloseIcon color="secondary.midgray" boxSize="20px" />
               ) : (
-                <IconCLose boxSize="24px" color="secondary.midgray" />
+                <IconClose boxSize="24px" color="secondary.midgray" />
               )
             }
             zIndex="overlay"
