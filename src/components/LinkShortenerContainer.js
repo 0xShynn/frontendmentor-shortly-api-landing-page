@@ -1,10 +1,13 @@
+import { useState } from 'react'
+
 import { Button } from '@chakra-ui/button'
 import { FormControl, FormErrorMessage } from '@chakra-ui/form-control'
 import { Input } from '@chakra-ui/input'
-import { Box, Flex } from '@chakra-ui/layout'
+import { Box, Flex, Text, VStack } from '@chakra-ui/layout'
 import { useBreakpointValue } from '@chakra-ui/media-query'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
+import { v4 as uuid } from 'uuid'
 import * as yup from 'yup'
 
 const regMatch =
@@ -17,6 +20,8 @@ const schema = yup.object().shape({
 const LinkShortenerContainer = () => {
   const buttonSizeVariant = useBreakpointValue({ base: 'md', md: 'lg' })
 
+  const [shortenedLinks, setShortenedLinks] = useState([])
+
   const {
     handleSubmit,
     register,
@@ -27,10 +32,18 @@ const LinkShortenerContainer = () => {
   function onSubmit(values) {
     return new Promise((resolve) => {
       setTimeout(() => {
-        alert(JSON.stringify(values, null, 2))
+        const id = uuid()
+        const newShortenedLink = {
+          originalLink: values.link,
+          shortenedLink: 'hey',
+          id,
+        }
+
+        // alert(JSON.stringify(values, null, 2))
         resolve()
+        setShortenedLinks([newShortenedLink, ...shortenedLinks])
         reset()
-      }, 1000)
+      }, 500)
     })
   }
 
@@ -43,7 +56,14 @@ const LinkShortenerContainer = () => {
         pos="relative"
         top={{ base: '-86px', md: '-70px', xl: '-94px' }}
       >
-        <Box bg="primary.purple" p={{ base: 6, md: 10, xl: 16 }} rounded="lg">
+        <Box
+          bg="primary.darkpurple"
+          bgImage="/images/bg-shorten-desktop.svg"
+          bgPos="center"
+          bgSize="cover"
+          p={{ base: 6, md: 10, xl: 16 }}
+          rounded="lg"
+        >
           <form onSubmit={handleSubmit(onSubmit)}>
             <FormControl isInvalid={errors.link} id="link">
               <Flex direction={{ base: 'column', md: 'row' }} align="center">
@@ -107,6 +127,36 @@ const LinkShortenerContainer = () => {
             </FormControl>
           </form>
         </Box>
+        {shortenedLinks.length > 0 ? (
+          <VStack spacing="4" mt="6">
+            {shortenedLinks.slice(0, 10).map((linkObj, index) => (
+              <Flex
+                key={index}
+                bg="white"
+                w="full"
+                py="5"
+                px="8"
+                rounded="md"
+                align="center"
+              >
+                <Text textStyle="medium" color="primary.blackpurple" flex="1">
+                  {linkObj.originalLink}
+                </Text>
+                <Text textStyle="medium" color="primary.teal">
+                  {linkObj.shortenedLink}
+                </Text>
+                <Button
+                  ml="6"
+                  onClick={() => {
+                    navigator.clipboard.writeText(linkObj.shortenedLink)
+                  }}
+                >
+                  Copy
+                </Button>
+              </Flex>
+            ))}
+          </VStack>
+        ) : null}
       </Box>
     </Box>
   )

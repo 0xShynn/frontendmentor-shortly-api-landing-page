@@ -16,6 +16,10 @@ const button = {
   },
   variants: {
     ...primary,
+    black: {
+      bg: 'primary.blackpurple',
+      color: 'white',
+    },
     // Add here the shared variants from the sharedStyleLinkButton.js
   },
   defaultProps: {

@@ -6,7 +6,7 @@ const textStyles = {
     letterSpacing: { base: '0.12px', lg: '0.13px', xl: '0.15px' },
   },
   medium: {
-    fontSize: { base: '16px', lg: '18px' },
+    fontSize: { base: '16px', lg: '20px' },
     lineHeight: { base: '28px', lg: '32px' },
     letterSpacing: { base: '0.11px', lg: '0.12px' },
   },
