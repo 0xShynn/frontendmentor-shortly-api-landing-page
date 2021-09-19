@@ -19,8 +19,9 @@ const schema = yup.object().shape({
 
 const LinkShortenerContainer = () => {
   const buttonSizeVariant = useBreakpointValue({ base: 'md', md: 'lg' })
-
   const [shortenedLinks, setShortenedLinks] = useState([])
+  const [selectedLink, setSelectedLink] = useState(null)
+  const [errorRes, setErrorRes] = useState(null)
 
   const {
     handleSubmit,
@@ -29,22 +30,26 @@ const LinkShortenerContainer = () => {
     formState: { errors, isSubmitting },
   } = useForm({ resolver: yupResolver(schema) })
 
-  function onSubmit(values) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const id = uuid()
-        const newShortenedLink = {
-          originalLink: values.link,
-          shortenedLink: 'hey',
-          id,
-        }
-
-        // alert(JSON.stringify(values, null, 2))
-        resolve()
-        setShortenedLinks([newShortenedLink, ...shortenedLinks])
-        reset()
-      }, 500)
+  async function getShortenedLink(url) {
+    const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`, {
+      method: 'POST',
     })
+      .then((res) => res.json())
+      .catch((err) => setErrorRes(err))
+
+    return res.result.full_short_link
+  }
+
+  async function onSubmit(values) {
+    const shortLink = await getShortenedLink(values.link)
+    const id = uuid()
+    const newShortenedLink = {
+      originalLink: values.link,
+      shortenedLink: shortLink,
+      id,
+    }
+    setShortenedLinks([newShortenedLink, ...shortenedLinks])
+    reset()
   }
 
   return (
@@ -147,15 +152,33 @@ const LinkShortenerContainer = () => {
                 </Text>
                 <Button
                   ml="6"
+                  // variant={linkObj.id === selectedLink.id ? 'black' : 'primary'}
                   onClick={() => {
                     navigator.clipboard.writeText(linkObj.shortenedLink)
+                    setSelectedLink(linkObj)
                   }}
                 >
-                  Copy
+                  {/* {linkObj.id === selectedLink.id ? 'Copied!' : 'Copy'} */}
+                  lol
                 </Button>
               </Flex>
             ))}
           </VStack>
+        ) : null}
+        {errorRes ? (
+          <Box
+            bg="white"
+            w="full"
+            py="5"
+            px="8"
+            rounded="md"
+            align="center"
+            mt="6"
+            borderColor="primary.red"
+            borderWidth="1px"
+          >
+            <Text color="primary.red">{errorRes.error}</Text>
+          </Box>
         ) : null}
       </Box>
     </Box>
