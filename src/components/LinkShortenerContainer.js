@@ -3,7 +3,16 @@ import { FormControl, FormErrorMessage } from '@chakra-ui/form-control'
 import { Input } from '@chakra-ui/input'
 import { Box, Flex } from '@chakra-ui/layout'
 import { useBreakpointValue } from '@chakra-ui/media-query'
+import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
+import * as yup from 'yup'
+
+const regMatch =
+  /^((http|https):\/\/)?(www.)?(?!.*(http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+(\/)?.([\w\?[a-zA-Z-_%\/@?]+)*([^\/\w\?[a-zA-Z0-9_-]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?$/
+
+const schema = yup.object().shape({
+  link: yup.string().matches(regMatch, 'Please add a valid link').required(),
+})
 
 const LinkShortenerContainer = () => {
   const buttonSizeVariant = useBreakpointValue({ base: 'md', md: 'lg' })
@@ -13,7 +22,7 @@ const LinkShortenerContainer = () => {
     register,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm()
+  } = useForm({ resolver: yupResolver(schema) })
 
   function onSubmit(values) {
     return new Promise((resolve) => {
