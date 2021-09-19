@@ -7,6 +7,7 @@ const colors = {
     blackpurple: '#34313E',
     footerpurple: '#232127',
     black: '#34313E',
+    red: '#F46363',
   },
   secondary: {
     midgray: '#9F9AA9',

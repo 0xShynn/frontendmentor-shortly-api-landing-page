@@ -3,7 +3,7 @@ const global = {
   body: {
     fontSize: '15px',
     lineHeight: '26px',
-    bg: 'white',
+    bg: 'primary.footerpurple',
   },
 }
 

@@ -8,10 +8,10 @@ const button = {
     sm: {},
     md: { py: '22px', px: '30px' },
     lg: {
-      py: '32px',
+      py: '30px',
       px: '40px',
       fontSize: '20px',
-      borderRadius: 'xl',
+      borderRadius: 'lg',
     },
   },
   variants: {
