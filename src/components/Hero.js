@@ -24,8 +24,8 @@ const Hero = () => {
         <Box overflow="hidden" w="full" display={{ base: 'block', lg: 'none' }}>
           <Box
             pos="relative"
-            right={{ base: '-30px', md: '0' }}
-            w={{ base: '100%', sm: '120%', md: '130%' }}
+            right={{ base: '-30px', md: 0 }}
+            w={{ base: '100%', sm: '120%', md: '140%' }}
           >
             <NextImage src={IllustrationWork} layout="responsive" />
           </Box>
@@ -33,8 +33,10 @@ const Hero = () => {
 
         <Box
           maxW="565px"
-          px={{ base: 6, xl: 0 }}
-          py={{ base: '30px', lg: '36px', lg2: '64px', xl: '100px' }}
+          pl={{ base: 6, md: 12, xl: 0 }}
+          pr={{ base: 6, md: 6, xl: 0 }}
+          pt={{ base: '30px', lg: '36px', lg2: '64px', xl: '100px' }}
+          pb={{ base: 16, md: 20, lg: 24 }}
           textAlign={{ base: 'center', md: 'left' }}
         >
           <Heading

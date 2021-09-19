@@ -76,7 +76,7 @@ const Footer = () => {
       w="full"
       role="contentinfo"
       py="16"
-      px={{ base: 6, md: 16 }}
+      px={{ base: 6, md: 12 }}
     >
       <Stack
         align={{ base: 'center', md: 'flex-start' }}
