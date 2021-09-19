@@ -26,7 +26,7 @@ const Header = () => {
         <Flex align="center">
           <Link href="/" size="none" mr="10">
             <Box w="120px">
-              <ShortlyLogo />
+              <ShortlyLogo color="#34313D" />
             </Box>
           </Link>
 
