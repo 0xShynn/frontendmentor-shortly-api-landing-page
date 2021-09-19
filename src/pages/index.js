@@ -2,6 +2,7 @@ import { Box } from '@chakra-ui/layout'
 import { NextSeo } from 'next-seo'
 
 import Banner from '../components/Banner'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Services from '../components/Services'
@@ -19,7 +20,7 @@ export default function Home() {
         <Banner />
       </Box>
 
-      <Box role="contentinfo"></Box>
+      <Footer />
     </Box>
   )
 }
