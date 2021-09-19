@@ -8,7 +8,7 @@ import Service from './Service'
 
 const Services = () => {
   return (
-    <Box bg="secondary.lightgray" pt="20" pb={{ base: 20, lg: 32 }} px="6">
+    <Box bg="secondary.lightgray" pb={{ base: 20, lg: 32 }} px="6">
       <Box textAlign="center">
         <Box maxW="540px" mx="auto" mb={{ base: 20, lg: 28, xl: 32 }}>
           <Heading as="h2" variant="h2" mb="4">

@@ -10,7 +10,6 @@ export const primary = {
   primary: {
     bg: 'primary.teal',
     color: 'white',
-    rounded: 'full',
     ...SharedBtnStyle,
     _hover: {
       bg: 'primary.teal_hover',

@@ -3,6 +3,7 @@ import { sharedBaseStyle, primary } from './sharedStyleLinkButton'
 const link = {
   baseStyle: {
     ...sharedBaseStyle,
+    rounded: 'full',
     fontWeight: '700',
     _hover: {
       textDecoration: 'none',

@@ -16,7 +16,7 @@ const Hero = () => {
     >
       <Flex
         direction={{ base: 'column', md: 'row-reverse', lg: 'row' }}
-        align="center"
+        align={{ base: 'center', md: 'flex-start' }}
         w="full"
         mx="auto"
         maxW="1110px"
@@ -25,6 +25,7 @@ const Hero = () => {
           <Box
             pos="relative"
             right={{ base: '-30px', md: 0 }}
+            pt={{ md: 6 }}
             w={{ base: '100%', sm: '120%', md: '140%' }}
           >
             <NextImage src={IllustrationWork} layout="responsive" />
@@ -36,7 +37,7 @@ const Hero = () => {
           pl={{ base: 6, md: 12, xl: 0 }}
           pr={{ base: 6, md: 6, xl: 0 }}
           pt={{ base: '30px', lg: '36px', lg2: '64px', xl: '100px' }}
-          pb={{ base: 16, md: 20, lg: 24 }}
+          pb={{ base: 36, md: 36, lg: 44, xl: 52 }}
           textAlign={{ base: 'center', md: 'left' }}
         >
           <Heading

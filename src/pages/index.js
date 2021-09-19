@@ -5,6 +5,7 @@ import Banner from '../components/Banner'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
+import LinkShortenerContainer from '../components/LinkShortenerContainer'
 import Services from '../components/Services'
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Box role="main" bg="white">
         <Header />
         <Hero />
+        <LinkShortenerContainer />
         <Services />
         <Banner />
       </Box>
