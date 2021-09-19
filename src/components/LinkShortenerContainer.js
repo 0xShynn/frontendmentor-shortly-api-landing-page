@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { Button } from '@chakra-ui/button'
 import { FormControl, FormErrorMessage } from '@chakra-ui/form-control'
@@ -143,23 +143,41 @@ const LinkShortenerContainer = () => {
                 px="8"
                 rounded="md"
                 align="center"
+                direction={{ base: 'column', md: 'row' }}
               >
-                <Text textStyle="medium" color="primary.blackpurple" flex="1">
+                <Text
+                  textStyle="medium"
+                  color="primary.blackpurple"
+                  flex="1"
+                  wordBreak="break-all"
+                >
                   {linkObj.originalLink}
                 </Text>
-                <Text textStyle="medium" color="primary.teal">
+                <Text
+                  textStyle="medium"
+                  color="primary.teal"
+                  ml={{ base: 0, md: 6 }}
+                  wordBreak="break-all"
+                >
                   {linkObj.shortenedLink}
                 </Text>
                 <Button
-                  ml="6"
-                  // variant={linkObj.id === selectedLink.id ? 'black' : 'primary'}
+                  minW="110px"
+                  ml={{ base: 0, md: 6 }}
+                  px="0"
+                  variant={
+                    selectedLink && linkObj.id === selectedLink.id
+                      ? 'black'
+                      : 'primary'
+                  }
                   onClick={() => {
                     navigator.clipboard.writeText(linkObj.shortenedLink)
                     setSelectedLink(linkObj)
                   }}
                 >
-                  {/* {linkObj.id === selectedLink.id ? 'Copied!' : 'Copy'} */}
-                  lol
+                  {selectedLink && linkObj.id === selectedLink.id
+                    ? 'Copied!'
+                    : 'Copy'}
                 </Button>
               </Flex>
             ))}
