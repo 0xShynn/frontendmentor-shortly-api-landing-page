@@ -101,7 +101,12 @@ const Footer = () => {
             </Heading>
             <Stack color="secondary.gray" mb="8">
               {section.links.map((link, index) => (
-                <Link key={index} url={link.url} fontWeight="400">
+                <Link
+                  key={index}
+                  url={link.url}
+                  fontWeight="400"
+                  _hover={{ color: 'primary.teal' }}
+                >
                   {link.title}
                 </Link>
               ))}
