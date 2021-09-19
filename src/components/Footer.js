@@ -1,5 +1,5 @@
 import Icon from '@chakra-ui/icon'
-import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/layout'
+import { Box, Heading, Link, Stack } from '@chakra-ui/layout'
 
 import ShortlyLogo from '../assets/brand/ShortlyLogo'
 import IconFacebook from '../assets/icons/IconFacebook'
@@ -51,47 +51,66 @@ const navLinks = [
   },
 ]
 
+const SocialStack = ({ display }) => {
+  return (
+    <Stack direction="row" spacing="6" display={display}>
+      {socialIcons.map((icon, index) => (
+        <Icon
+          key={index}
+          boxSize={{ base: '24px' }}
+          color="white"
+          cursor="pointer"
+          _hover={{ color: 'primary.teal' }}
+        >
+          {icon}
+        </Icon>
+      ))}
+    </Stack>
+  )
+}
+
 const Footer = () => {
   return (
-    <Box bg="primary.footerpurple" w="full" role="contentinfo" py="16" px="6">
-      <Flex
-        justify="center"
-        align="center"
-        direction={{ base: 'column', lg: 'row' }}
+    <Box
+      bg="primary.footerpurple"
+      w="full"
+      role="contentinfo"
+      py="16"
+      px={{ base: 6, md: 16 }}
+    >
+      <Stack
+        align={{ base: 'center', md: 'flex-start' }}
+        justify={{ md: 'space-between' }}
+        textAlign={{ base: 'center', md: 'left' }}
+        direction={{ base: 'column', md: 'row' }}
+        spacing={{ md: 16, lg: 24 }}
+        maxW="1110px"
+        mx="auto"
       >
-        <Box w="120px" mb="12">
-          <ShortlyLogo color="white" />
+        <Box flex="1">
+          <Box w="120px" mb={{ base: 12, md: 8 }}>
+            <ShortlyLogo color="white" />
+          </Box>
+          <SocialStack display={{ base: 'none', md: 'flex', xl: 'none' }} />
         </Box>
-        <Stack align="center" textAlign="center">
-          {navLinks.map((section, index) => (
-            <Box key={index}>
-              <Heading as="h4" variant="h4" color="white" mb="6">
-                {section.title}
-              </Heading>
-              <Stack color="secondary.gray" mb="8">
-                {section.links.map((link, index) => (
-                  <Link key={index} url={link.url} fontWeight="400">
-                    {link.title}
-                  </Link>
-                ))}
-              </Stack>
-            </Box>
-          ))}
-          <Stack direction="row" spacing="6">
-            {socialIcons.map((icon, index) => (
-              <Icon
-                key={index}
-                boxSize={{ base: '24px' }}
-                color="white"
-                cursor="pointer"
-                _hover={{ color: 'primary.teal' }}
-              >
-                {icon}
-              </Icon>
-            ))}
-          </Stack>
-        </Stack>
-      </Flex>
+
+        {navLinks.map((section, index) => (
+          <Box key={index}>
+            <Heading as="h4" variant="h4" color="white" mb="6">
+              {section.title}
+            </Heading>
+            <Stack color="secondary.gray" mb="8">
+              {section.links.map((link, index) => (
+                <Link key={index} url={link.url} fontWeight="400">
+                  {link.title}
+                </Link>
+              ))}
+            </Stack>
+          </Box>
+        ))}
+
+        <SocialStack display={{ md: 'none', xl: 'flex' }} />
+      </Stack>
     </Box>
   )
 }
