@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import { Button } from '@chakra-ui/button'
 import { FormControl, FormErrorMessage } from '@chakra-ui/form-control'
 import { Input } from '@chakra-ui/input'
-import { Box, Flex, Text, VStack } from '@chakra-ui/layout'
+import { Box, Flex, Text, VStack, Grid, GridItem } from '@chakra-ui/layout'
 import { useBreakpointValue } from '@chakra-ui/media-query'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
@@ -135,22 +135,22 @@ const LinkShortenerContainer = () => {
         {shortenedLinks.length > 0 ? (
           <VStack spacing="4" mt="6">
             {shortenedLinks.slice(0, 10).map((linkObj, index) => (
-              <Flex
+              <Grid
+                templateRows="repeat(2,1fr)"
+                templateColumns="repeat(5,1fr)"
                 key={index}
                 bg="white"
                 w="full"
-                p={{ base: 0, md: 6 }}
                 rounded="md"
-                align="center"
-                direction={{ base: 'column', md: 'row' }}
+                pb={{ base: 4, md: 0 }}
               >
-                <Box
-                  borderBottom="1px"
+                <GridItem
+                  colSpan={{ base: 5, md: 4 }}
+                  order="1"
+                  py="2"
+                  px={{ base: 4, md: 0 }}
+                  borderBottom={{ base: '1px', md: 0 }}
                   borderBottomColor="#E7E6E9"
-                  w="full"
-                  px="5"
-                  pt="3"
-                  pb="3"
                 >
                   <Text
                     textStyle="medium"
@@ -161,22 +161,15 @@ const LinkShortenerContainer = () => {
                   >
                     {linkObj.originalLink}
                   </Text>
-                </Box>
-                <Box pt="3" pb="3" px="5" w="full">
-                  <Text
-                    textStyle="medium"
-                    color="primary.teal"
-                    ml={{ base: 0, md: 6 }}
-                    wordBreak="break-all"
-                  >
-                    {linkObj.shortenedLink}
-                  </Text>
-                </Box>
-                <Box px="5" w="full" pb="5">
+                </GridItem>
+
+                <GridItem
+                  rowSpan={2}
+                  colSpan={{ base: 5, md: 1 }}
+                  order={{ base: '3', md: '2' }}
+                  px={{ base: 4, md: 0 }}
+                >
                   <Button
-                    minW="110px"
-                    ml={{ base: 0, md: 6 }}
-                    px="0"
                     w={{ base: 'full' }}
                     variant={
                       selectedLink && linkObj.id === selectedLink.id
@@ -192,8 +185,23 @@ const LinkShortenerContainer = () => {
                       ? 'Copied!'
                       : 'Copy'}
                   </Button>
-                </Box>
-              </Flex>
+                </GridItem>
+
+                <GridItem
+                  colSpan={{ base: 5, md: 4 }}
+                  order="2"
+                  py="2"
+                  px={{ base: 4, md: 0 }}
+                >
+                  <Text
+                    textStyle="medium"
+                    color="primary.teal"
+                    wordBreak="break-all"
+                  >
+                    {linkObj.shortenedLink}
+                  </Text>
+                </GridItem>
+              </Grid>
             ))}
           </VStack>
         ) : null}
