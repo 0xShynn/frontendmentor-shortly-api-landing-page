@@ -7,7 +7,6 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import LinkShortenerContainer from '../components/LinkShortenerContainer'
 import Services from '../components/Services'
-import Test from '../components/Test'
 
 export default function Home() {
   return (

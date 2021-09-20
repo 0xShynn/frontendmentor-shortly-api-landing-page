@@ -108,7 +108,7 @@ const LinkShortenerContainer = () => {
                 <Button
                   type="submit"
                   mt={{ base: errors.link ? 2 : 4, md: 0 }}
-                  ml={{ base: 0, md: 4, xl: 6 }}
+                  ml={{ base: 5, md: 4, xl: 6 }}
                   colorScheme="teal"
                   w={{ base: 'full', md: 'auto' }}
                   size={buttonSizeVariant}
@@ -136,19 +136,21 @@ const LinkShortenerContainer = () => {
           <VStack spacing="4" mt="6">
             {shortenedLinks.slice(0, 10).map((linkObj, index) => (
               <Grid
-                templateRows="repeat(2,1fr)"
+                templateRows={{ base: 'repeat(2,1fr)', lg: 'repeat(1,1fr)' }}
                 templateColumns="repeat(5,1fr)"
                 key={index}
                 bg="white"
                 w="full"
                 rounded="md"
                 pb={{ base: 4, md: 0 }}
+                alignItems="center"
               >
                 <GridItem
-                  colSpan={{ base: 5, md: 4 }}
+                  colSpan={{ base: 5, md: 4, xl: 2 }}
+                  bg="red.100"
                   order="1"
                   py="2"
-                  px={{ base: 4, md: 0 }}
+                  px={{ base: 4, md: 4 }}
                   borderBottom={{ base: '1px', md: 0 }}
                   borderBottomColor="#E7E6E9"
                 >
@@ -165,9 +167,11 @@ const LinkShortenerContainer = () => {
 
                 <GridItem
                   rowSpan={2}
-                  colSpan={{ base: 5, md: 1 }}
-                  order={{ base: '3', md: '2' }}
+                  colSpan={{ base: 6, md: 1 }}
+                  order={{ base: '3', md: '2', xl: '3' }}
                   px={{ base: 4, md: 0 }}
+                  pr={{ md: 4 }}
+                  bg="green.100"
                 >
                   <Button
                     w={{ base: 'full' }}
@@ -188,15 +192,17 @@ const LinkShortenerContainer = () => {
                 </GridItem>
 
                 <GridItem
-                  colSpan={{ base: 5, md: 4 }}
+                  colSpan={{ base: 5, md: 4, xl: 2 }}
+                  bg="blue.100"
                   order="2"
                   py="2"
-                  px={{ base: 4, md: 0 }}
+                  px={{ base: 4, md: 4 }}
                 >
                   <Text
                     textStyle="medium"
                     color="primary.teal"
                     wordBreak="break-all"
+                    textAlign={{ xl: 'right' }}
                   >
                     {linkObj.shortenedLink}
                   </Text>
