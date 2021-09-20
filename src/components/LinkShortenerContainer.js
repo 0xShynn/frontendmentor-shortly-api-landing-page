@@ -109,7 +109,7 @@ const LinkShortenerContainer = () => {
                   type="submit"
                   mt={{ base: errors.link ? 2 : 4, md: 0 }}
                   ml={{ base: 0, md: 4, xl: 6 }}
-                  colorScheme="teal"
+                  colorScheme="brand"
                   w={{ base: 'full', md: 'auto' }}
                   size={buttonSizeVariant}
                   isLoading={isSubmitting}

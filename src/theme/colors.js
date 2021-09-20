@@ -14,6 +14,18 @@ const colors = {
     gray: '#BFBFBF',
     lightgray: '#EEF1F7',
   },
+  brand: {
+    50: '#d6ffff',
+    100: '#aaffff',
+    200: '#7afffe',
+    300: '#47fffc',
+    400: '#1afffc',
+    500: '#00e6e2',
+    600: '#00b3b0',
+    700: '#00817f',
+    800: '#004e4c',
+    900: '#001c1b',
+  },
 }
 
 export default colors
