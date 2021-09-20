@@ -139,46 +139,60 @@ const LinkShortenerContainer = () => {
                 key={index}
                 bg="white"
                 w="full"
-                py="5"
-                px="8"
+                p={{ base: 0, md: 6 }}
                 rounded="md"
                 align="center"
                 direction={{ base: 'column', md: 'row' }}
               >
-                <Text
-                  textStyle="medium"
-                  color="primary.blackpurple"
-                  flex="1"
-                  wordBreak="break-all"
+                <Box
+                  borderBottom="1px"
+                  borderBottomColor="#E7E6E9"
+                  w="full"
+                  px="5"
+                  pt="3"
+                  pb="3"
                 >
-                  {linkObj.originalLink}
-                </Text>
-                <Text
-                  textStyle="medium"
-                  color="primary.teal"
-                  ml={{ base: 0, md: 6 }}
-                  wordBreak="break-all"
-                >
-                  {linkObj.shortenedLink}
-                </Text>
-                <Button
-                  minW="110px"
-                  ml={{ base: 0, md: 6 }}
-                  px="0"
-                  variant={
-                    selectedLink && linkObj.id === selectedLink.id
-                      ? 'black'
-                      : 'primary'
-                  }
-                  onClick={() => {
-                    navigator.clipboard.writeText(linkObj.shortenedLink)
-                    setSelectedLink(linkObj)
-                  }}
-                >
-                  {selectedLink && linkObj.id === selectedLink.id
-                    ? 'Copied!'
-                    : 'Copy'}
-                </Button>
+                  <Text
+                    textStyle="medium"
+                    color="primary.blackpurple"
+                    flex="1"
+                    wordBreak="break-all"
+                    isTruncated
+                  >
+                    {linkObj.originalLink}
+                  </Text>
+                </Box>
+                <Box pt="3" pb="3" px="5" w="full">
+                  <Text
+                    textStyle="medium"
+                    color="primary.teal"
+                    ml={{ base: 0, md: 6 }}
+                    wordBreak="break-all"
+                  >
+                    {linkObj.shortenedLink}
+                  </Text>
+                </Box>
+                <Box px="5" w="full" pb="5">
+                  <Button
+                    minW="110px"
+                    ml={{ base: 0, md: 6 }}
+                    px="0"
+                    w={{ base: 'full' }}
+                    variant={
+                      selectedLink && linkObj.id === selectedLink.id
+                        ? 'black'
+                        : 'primary'
+                    }
+                    onClick={() => {
+                      navigator.clipboard.writeText(linkObj.shortenedLink)
+                      setSelectedLink(linkObj)
+                    }}
+                  >
+                    {selectedLink && linkObj.id === selectedLink.id
+                      ? 'Copied!'
+                      : 'Copy'}
+                  </Button>
+                </Box>
               </Flex>
             ))}
           </VStack>
