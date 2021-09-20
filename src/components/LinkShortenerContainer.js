@@ -108,7 +108,7 @@ const LinkShortenerContainer = () => {
                 <Button
                   type="submit"
                   mt={{ base: errors.link ? 2 : 4, md: 0 }}
-                  ml={{ base: 5, md: 4, xl: 6 }}
+                  ml={{ base: 0, md: 4, xl: 6 }}
                   colorScheme="teal"
                   w={{ base: 'full', md: 'auto' }}
                   size={buttonSizeVariant}
@@ -142,16 +142,16 @@ const LinkShortenerContainer = () => {
                 bg="white"
                 w="full"
                 rounded="md"
-                pb={{ base: 4, md: 0 }}
+                pb={{ base: 4, md: 0, xl: 4 }}
+                pt={{ xl: 4 }}
                 alignItems="center"
               >
                 <GridItem
                   colSpan={{ base: 5, md: 4, xl: 2 }}
-                  bg="red.100"
                   order="1"
                   py="2"
-                  px={{ base: 4, md: 4 }}
-                  borderBottom={{ base: '1px', md: 0 }}
+                  px={{ base: 4, md: 4, xl: 6 }}
+                  borderBottom={{ base: '1px', xl: 0 }}
                   borderBottomColor="#E7E6E9"
                 >
                   <Text
@@ -169,9 +169,7 @@ const LinkShortenerContainer = () => {
                   rowSpan={2}
                   colSpan={{ base: 6, md: 1 }}
                   order={{ base: '3', md: '2', xl: '3' }}
-                  px={{ base: 4, md: 0 }}
-                  pr={{ md: 4 }}
-                  bg="green.100"
+                  px={{ base: 4, md: 6, xl: 6 }}
                 >
                   <Button
                     w={{ base: 'full' }}
@@ -193,7 +191,6 @@ const LinkShortenerContainer = () => {
 
                 <GridItem
                   colSpan={{ base: 5, md: 4, xl: 2 }}
-                  bg="blue.100"
                   order="2"
                   py="2"
                   px={{ base: 4, md: 4 }}
