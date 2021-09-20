@@ -4,7 +4,7 @@
 const canonicalUrl = ''
 
 // Edit the default title
-const defaultTitle = 'Site title'
+const defaultTitle = 'Shortly'
 
 // Edit the SEO parameters
 export const SEO = {
@@ -37,19 +37,19 @@ export const SEO = {
       rel: 'mask-icon',
       href: 'favicons/safari-pinned-tab.svg',
       // Edit the touch bar background color
-      color: '#81e6d9',
+      color: '#232127',
     },
   ],
   additionalMetaTags: [
     {
       name: 'msapplication-TileColor',
       // Edit the tile color (windows)
-      content: '#81e6d9',
+      content: '#232127',
     },
     {
       name: 'theme-color',
       // Edit the full background color (android)
-      content: '#ffffff',
+      content: '#232127',
     },
   ],
   openGraph: {
