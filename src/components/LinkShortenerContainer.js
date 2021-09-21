@@ -10,16 +10,24 @@ import { useForm } from 'react-hook-form'
 import { v4 as uuid } from 'uuid'
 import * as yup from 'yup'
 
-const regMatch =
+import useLocalStorage from '../hooks/useLocalStorage'
+
+const urlRegExpression =
   /^((http|https):\/\/)?(www.)?(?!.*(http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+(\/)?.([\w\?[a-zA-Z-_%\/@?]+)*([^\/\w\?[a-zA-Z0-9_-]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?$/
 
 const schema = yup.object().shape({
-  link: yup.string().matches(regMatch, 'Please add a valid link').required(),
+  link: yup
+    .string()
+    .matches(urlRegExpression, 'Please add a valid link')
+    .required(),
 })
 
 const LinkShortenerContainer = () => {
   const buttonSizeVariant = useBreakpointValue({ base: 'md', md: 'lg' })
-  const [shortenedLinks, setShortenedLinks] = useState([])
+  const [shortenedLinks, setShortenedLinks] = useLocalStorage(
+    'shortenedLinks',
+    ''
+  )
   const [selectedLink, setSelectedLink] = useState(null)
   const [errorRes, setErrorRes] = useState(null)
 
@@ -209,6 +217,7 @@ const LinkShortenerContainer = () => {
             ))}
           </VStack>
         ) : null}
+
         {errorRes ? (
           <Box
             bg="white"
