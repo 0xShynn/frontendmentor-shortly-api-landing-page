@@ -172,6 +172,7 @@ const LinkShortenerContainer = () => {
                   px={{ base: 4, md: 6, xl: 6 }}
                 >
                   <Button
+                    rounded="lg"
                     w={{ base: 'full' }}
                     variant={
                       selectedLink && linkObj.id === selectedLink.id

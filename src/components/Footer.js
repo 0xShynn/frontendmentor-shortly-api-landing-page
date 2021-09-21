@@ -55,15 +55,16 @@ const SocialStack = ({ display }) => {
   return (
     <Stack direction="row" spacing="6" display={display}>
       {socialIcons.map((icon, index) => (
-        <Icon
-          key={index}
-          boxSize={{ base: '24px' }}
-          color="white"
-          cursor="pointer"
-          _hover={{ color: 'primary.teal' }}
-        >
-          {icon}
-        </Icon>
+        <Link href="/" aria-label="Social Icon" key={index}>
+          <Icon
+            boxSize={{ base: '24px' }}
+            color="white"
+            cursor="pointer"
+            _hover={{ color: 'primary.teal' }}
+          >
+            {icon}
+          </Icon>
+        </Link>
       ))}
     </Stack>
   )
@@ -111,7 +112,7 @@ const Footer = () => {
               {section.links.map((link, index) => (
                 <Link
                   key={index}
-                  url={link.url}
+                  href={link.url}
                   fontWeight="400"
                   _hover={{ color: 'primary.teal' }}
                 >
