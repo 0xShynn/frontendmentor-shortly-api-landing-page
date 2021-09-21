@@ -20,7 +20,7 @@ const navLinks = [
     links: [
       {
         title: 'Link Shortening',
-        url: '#',
+        url: '/',
       },
       { title: 'Branded Links', url: '#' },
       { title: 'Analytics', url: '#' },
@@ -88,15 +88,23 @@ const Footer = () => {
         mx="auto"
       >
         <Box flex="1">
-          <Box w="120px" mb={{ base: 12, md: 8 }}>
-            <ShortlyLogo color="white" />
-          </Box>
+          <Link
+            aria-label="Shortly logo"
+            href="/"
+            display="inline-block"
+            mb={{ base: 12, md: 8 }}
+          >
+            <Box w="120px">
+              <ShortlyLogo color="white" />
+            </Box>
+          </Link>
+
           <SocialStack display={{ base: 'none', md: 'flex', xl: 'none' }} />
         </Box>
 
         {navLinks.map((section, index) => (
           <Box key={index}>
-            <Heading as="h4" variant="h4" color="white" mb="6">
+            <Heading as="h6" variant="h4" color="white" mb="6">
               {section.title}
             </Heading>
             <Stack color="secondary.gray" mb="8">

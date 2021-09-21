@@ -11,8 +11,10 @@ const Banner = () => {
       bgColor="primary.darkpurple"
       align="center"
       direction="column"
+      role="region"
+      aria-label="Banner"
     >
-      <Heading as="h2" variant="h2" color="white" mb={{ base: 4, xl: 8 }}>
+      <Heading as="h5" variant="h2" color="white" mb={{ base: 4, xl: 8 }}>
         Boost your links today
       </Heading>
       <Link href="#" variant="primary" size="md" display="inline-block">

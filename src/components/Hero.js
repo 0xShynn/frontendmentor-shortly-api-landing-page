@@ -13,6 +13,8 @@ const Hero = () => {
       bgSize={{ lg: '533px', lg2: '633px', xl: '733px' }}
       maxW="1640px"
       mx="auto"
+      role="region"
+      aria-label="Hero section"
     >
       <Flex
         direction={{ base: 'column', md: 'row-reverse', lg: 'row' }}
@@ -51,6 +53,7 @@ const Hero = () => {
           <Text
             textStyle="big"
             mb="10"
+            as="h2"
             maxW={{ base: 'unset', lg: '420px', xl: 'unset' }}
           >
             Build your brand’s recognition and get detailed insights on how your

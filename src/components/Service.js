@@ -23,7 +23,7 @@ const Service = ({ title, text, icon, index }) => {
       >
         {icon}
       </Box>
-      <Heading as="h3" variant="h3" mb="4">
+      <Heading as="h4" variant="h3" mb="4">
         {title}
       </Heading>
       <Text>{text}</Text>
