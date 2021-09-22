@@ -145,7 +145,7 @@ const LinkShortenerContainer = () => {
             {shortenedLinks.slice(0, 10).map((linkObj, index) => (
               <Grid
                 templateRows={{ base: 'repeat(2,1fr)', lg: 'repeat(1,1fr)' }}
-                templateColumns="repeat(5,1fr)"
+                templateColumns="repeat(12,1fr)"
                 key={index}
                 bg="white"
                 w="full"
@@ -155,7 +155,7 @@ const LinkShortenerContainer = () => {
                 alignItems="center"
               >
                 <GridItem
-                  colSpan={{ base: 5, md: 4, xl: 2 }}
+                  colSpan={{ base: 12, md: 9, xl: 7 }}
                   order="1"
                   py="2"
                   px={{ base: 4, md: 4, xl: 6 }}
@@ -175,7 +175,7 @@ const LinkShortenerContainer = () => {
 
                 <GridItem
                   rowSpan={2}
-                  colSpan={{ base: 6, md: 1 }}
+                  colSpan={{ base: 12, md: 3, xl: 1 }}
                   order={{ base: '3', md: '2', xl: '3' }}
                   px={{ base: 4, md: 6, xl: 6 }}
                 >
@@ -199,7 +199,7 @@ const LinkShortenerContainer = () => {
                 </GridItem>
 
                 <GridItem
-                  colSpan={{ base: 5, md: 4, xl: 2 }}
+                  colSpan={{ base: 12, md: 9, xl: 4 }}
                   order="2"
                   py="2"
                   px={{ base: 4, md: 4 }}

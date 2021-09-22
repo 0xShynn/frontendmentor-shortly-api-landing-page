@@ -58,12 +58,6 @@ export const SEO = {
     locale: 'en_IE',
     url: canonicalUrl,
   },
-  // Edit the twitter info or delete
-  twitter: {
-    handle: '@handle',
-    site: '@site',
-    cardType: 'summary_large_image',
-  },
 }
 
 export default SEO
