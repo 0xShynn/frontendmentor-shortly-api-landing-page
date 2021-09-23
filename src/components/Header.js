@@ -2,9 +2,12 @@ import { IconButton } from '@chakra-ui/button'
 import { useDisclosure } from '@chakra-ui/hooks'
 import { CloseIcon } from '@chakra-ui/icons'
 import { Box, Divider, Flex, HStack, Link, VStack } from '@chakra-ui/layout'
+import { motion } from 'framer-motion'
 
 import ShortlyLogo from '../assets/brand/ShortlyLogo'
 import IconClose from '../assets/icons/IconClose'
+
+const MotionFlex = motion(Flex)
 
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure()
@@ -71,7 +74,10 @@ const Header = () => {
       </Flex>
 
       {isOpen ? (
-        <Flex
+        <MotionFlex
+          key="modal"
+          initial={{ opacity: 0.9, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
           justify={{ base: null, md: 'flex-end' }}
           display={{ base: 'flex', lg: 'none' }}
           pos="absolute"
@@ -89,7 +95,7 @@ const Header = () => {
             w={{ base: 'full', md: '375px' }}
             mx="6"
           >
-            <VStack>
+            <VStack initial="hidden" animate="visible">
               {navLinks.map((link, index) => (
                 <Link
                   key={index}
@@ -127,7 +133,7 @@ const Header = () => {
               </Link>
             </VStack>
           </Box>
-        </Flex>
+        </MotionFlex>
       ) : null}
     </Box>
   )
