@@ -12,7 +12,10 @@ export default function Home() {
   return (
     <Box>
       {/* Edit the Head info */}
-      <NextSeo title="Home" description="Description" />
+      <NextSeo
+        title="Home"
+        description="Build your brand’s recognition and get detailed insights on how your links are performing."
+      />
 
       <Box role="main" bg="white">
         <Header />
