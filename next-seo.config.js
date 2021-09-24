@@ -68,6 +68,10 @@ export const SEO = {
       },
     ],
   },
+  twitter: {
+    handle: '@anhek_',
+    cardType: 'summary_large_image',
+  },
 }
 
 export default SEO
