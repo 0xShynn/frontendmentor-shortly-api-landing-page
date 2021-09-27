@@ -5,7 +5,8 @@ const canonicalUrl = ''
 
 // Edit the default title
 const defaultTitle = 'Shortly'
-const defaultDescription = 'More than just shorter links.'
+const defaultDescription =
+  'Build your brand’s recognition and get detailed insights on how your links are performing.'
 
 // Edit the SEO parameters
 export const SEO = {
