@@ -7,6 +7,8 @@ import IconInstagram from '../assets/icons/IconInstagram'
 import IconPinterest from '../assets/icons/IconPinterest'
 import IconTwitter from '../assets/icons/IconTwitter'
 
+import AuthorBanner from './AuthorBanner'
+
 const socialIcons = [
   <IconFacebook key="1" />,
   <IconTwitter key="2" />,
@@ -72,60 +74,63 @@ const SocialStack = ({ display }) => {
 
 const Footer = () => {
   return (
-    <Box
-      bg="primary.footerpurple"
-      w="full"
-      role="contentinfo"
-      py="16"
-      px={{ base: 6, md: 12 }}
-    >
-      <Stack
-        align={{ base: 'center', md: 'flex-start' }}
-        justify={{ md: 'space-between' }}
-        textAlign={{ base: 'center', md: 'left' }}
-        direction={{ base: 'column', md: 'row' }}
-        spacing={{ md: 16, lg: 24 }}
-        maxW="1110px"
-        mx="auto"
+    <>
+      <Box
+        bg="primary.footerpurple"
+        w="full"
+        role="contentinfo"
+        py="16"
+        px={{ base: 6, md: 12 }}
       >
-        <Box flex="1">
-          <Link
-            aria-label="Shortly logo"
-            href="/"
-            display="inline-block"
-            mb={{ base: 12, md: 8 }}
-          >
-            <Box w="120px">
-              <ShortlyLogo color="white" />
-            </Box>
-          </Link>
+        <Stack
+          align={{ base: 'center', md: 'flex-start' }}
+          justify={{ md: 'space-between' }}
+          textAlign={{ base: 'center', md: 'left' }}
+          direction={{ base: 'column', md: 'row' }}
+          spacing={{ md: 16, lg: 24 }}
+          maxW="1110px"
+          mx="auto"
+        >
+          <Box flex="1">
+            <Link
+              aria-label="Shortly logo"
+              href="/"
+              display="inline-block"
+              mb={{ base: 12, md: 8 }}
+            >
+              <Box w="120px">
+                <ShortlyLogo color="white" />
+              </Box>
+            </Link>
 
-          <SocialStack display={{ base: 'none', md: 'flex', xl: 'none' }} />
-        </Box>
-
-        {navLinks.map((section, index) => (
-          <Box key={index}>
-            <Heading as="h6" variant="h4" color="white" mb="6">
-              {section.title}
-            </Heading>
-            <Stack color="secondary.gray" mb="8">
-              {section.links.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.url}
-                  fontWeight="400"
-                  _hover={{ color: 'primary.teal' }}
-                >
-                  {link.title}
-                </Link>
-              ))}
-            </Stack>
+            <SocialStack display={{ base: 'none', md: 'flex', xl: 'none' }} />
           </Box>
-        ))}
 
-        <SocialStack display={{ md: 'none', xl: 'flex' }} />
-      </Stack>
-    </Box>
+          {navLinks.map((section, index) => (
+            <Box key={index}>
+              <Heading as="h6" variant="h4" color="white" mb="6">
+                {section.title}
+              </Heading>
+              <Stack color="secondary.gray" mb="8">
+                {section.links.map((link, index) => (
+                  <Link
+                    key={index}
+                    href={link.url}
+                    fontWeight="400"
+                    _hover={{ color: 'primary.teal' }}
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+              </Stack>
+            </Box>
+          ))}
+
+          <SocialStack display={{ md: 'none', xl: 'flex' }} />
+        </Stack>
+      </Box>
+      <AuthorBanner />
+    </>
   )
 }
 
